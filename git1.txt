@@ -1,0 +1,61 @@
+All the projects now a days using Github. 
+
+Git is the central repository. We need to pull the code from Git(as a developer) and to make changes to it.
+
+Every change in code will be tracked in Git. 
+
+Git, Github, Gitlap, Gitserver, Bitbucket. these all are competetors.
+
+To install github     www.github.com  -> sign up. 
+
+Repository is nothing but storage space. 
+
+We can create organization before creating repository. 
+
+Public repository means anyone can access the repository but can't make changes to data. private repository means they need to have permission to access the repository.    
+
+There are 2 ways to access the repository. one is we can directly access it and use it. other one we can access github from our client machine(by Linux OS and putty). we sould have installed gitclient for that(git in the client machine). 
+
+Most of the times developers access git repository from their local machine.
+
+yum install git is the command used to install git on the clinet machine.  
+git --version is to know the git version. 
+
+git clone https://github.com/whatsapp123456/venky.git is used to access the repository with the url. We need to provide the github username and password. 
+
+Repository means directory. venky.git a directory with the name venky will be created. we can use cd venky to work on venky directory. 
+
+touch is the command used to create files. 
+touch test1 is used to create test1 file. 
+
+git add .(It will save the info into our index area.)
+git commit -m "first commit" (commit means change. a short description about your change)
+git push origin master (push the changes from local to central repository.)
+
+above commands are used to push the code into github. 
+first commit is the comment we are giving. It's not the file data. 
+
+ls -la is used to list all the folders(including hidden folders). 
+.git is the hidden folder available only in repository. git commands work only in repository. 
+.git folder has all the information regarding the changes made in the repository. 
+index is one of the files in .git folder. git add . save the info to the index file. 
+
+we can avoid the authentication (user name & password) for each time when we push code. for that: 
+
+We need to go to root home directory. cd command in root user takes us to the root home directory. 
+we need to create a hidden file .netrc in that directory. (vi .netrc)
+we use . for the hidden files. 
+In the file, we have to write machine github.com
+                              login venky583(user name)
+                              password BOLxz9876! (password)
+Then if we make some corrections and run the git commands, It won't ask us for username and password. 
+
+history is the command used to list all the commands triggered in the session. 
+
+git log is the command used to list all the commits we've done till now. 
+
+git show commitid is used to know what we did exactly in that commit. 
+Ex: git show 2ff96d8ea2a23d449983142abf65790e6c5a642f
+
+git revert commitid is used to revert the commit(it'll undo the commit). 
+then git push origin master reflects the reverted changes. 
