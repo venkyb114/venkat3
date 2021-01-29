@@ -1,0 +1,74 @@
+To conform that we are in the repository, we can use ls -la command to see the .git folder. 
+
+git help shows us all the available github commands. 
+
+As a devops admin, mostly we work on the central repository. creating organizations, creating repositories, providing accesses etc., 
+
+git log --help shows us all the commands available in git log. 
+
+If we want any help while working on the central repository -> help -> github.com
+
+In the centrtal repository, if we click on the repository name, we can find option code where we can find the URL's.(https, ssh, github). If we want to use ssh URL, we need to generate keys in CLI(ssh keygen) and have to copy these keys in ssh. https URL is the best way to access. 
+
+git show (commit id) shows us all the corrections exactly made to the commit. 
++ means adition of data.
+- means removal of data. 
+
+git diff commitid1 commitid2 is the command used to compare between 2 commits. mostly those 2 commits were done on same file. 
+
+We use branches in git. If we want to push corrected code without distrubing the initial code, we can use branches. 
+In single repository, we can have multiple branches. we can work on the child branch without distrubing the original code, if everything is ok, then we can merge it with the parent. 
+
+In real time usually we have 4,5 branches. 
+
+git branch -a is the command used to list all the branches available in the repository. 
+
+git branch dev is the command used to create the dev branch. 
+after creating dev branch, we need to push it to the central repository. git push origin dev is command for that. 
+
+The star mark infront of the branch shows that we are in that branch. 
+git checkout dev is the command used to swith branch to dev. 
+
+All the files in parent branch will be showed in child branch, but all the files in child branch will not be showed in parent branch until we merge. 
+
+If we create dev branch from master branch, it'll be child branch to master branch.
+If we create qa branch from dev branch, it'll be child to the dev branch. 
+
+Every code repository has minimum set of branches master, dev, qa, prod. 
+
+Branching strategy:
+
+When a developer gets the new functionality requirement, he asks the devops admin to create a feature branch. 
+feature branch: new requirements will be added to this branch. 
+We need to create feature branch from dev branch so that developer works on it. (feature branch will be created only from dev branch.)
+
+Once the developer finishes his work on the feature branch, a pr(pull request) will be created to merge the feature branch with dev. 
+
+Deployment is nothing but installation. we'll know better in jenkins. 
+
+Once the deployment is completed and successful in dev, a pr(pull request) will be created to merge the dev branch with qa.
+Once the deployment is completed and successful in qa, a pr(pull request) will be created to merge the qa branch with prod.
+Once the deployment is completed and successful in prod, a pr(pull request) will be created to merge the prod branch with master.(depends on the project)
+Finally we take downtime for production environment and merge code. 
+
+To make the pull request, on the central repository -> new pull request
+left side should be the parent(dev) and right side should be the child(new feature) branch. 
+write some comment and create pull request. 
+In real time, only team lead will see the merge request option. He can either merge or close the request with some comment. 
+
+After merging branches in central repository, the changes will not appear directly in the local repository.
+We need to do git pull for that in the local repository. 
+by default git pull command only work for the master branch. 
+To make it work with dev branch git branch --set-upstream-to=origin/dev dev command can be used. 
+then we can do git pull https://github.com/whatsapp123456/venky.git dev, then we are able to see the changes in local repository. 
+
+similarly, we can merge dev with qa and qa with prod. after merging with qa in central repository
+git checkout qa
+git branch --set-upstream-to=origin/qa qa
+git pull https://github.com/whatsapp123456/venky.git qa
+above commands are used to see changes in local repository. 
+
+once the production is done, the new feature branch can be deleted. 
+
+ 
+  
