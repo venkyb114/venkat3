@@ -1,0 +1,34 @@
+git diff commitid1 commitid2 is used to know the differences between 2 commmits.
+git diff dev qa is used to know the differences between 2 branches dev and qa.
+
+git log is used to show the changes made in the current branch. 
+git log qa prod is used to know the commit differences between 2 branches. 
+
+echo $? is the command used to know whether the previous command is correct or not. 
+
+Application build, checking the quality of code, installing app on top of another application are developer works after writing code every time(build steps). 
+
+tags are used to remember a particular commit when we got some working shape to the code. 
+After pushing code into central repository we can create tag to that commit. 
+git tag version1 is the command used to create tag version1. 
+After creating tag, we need to push it into the central repository.
+git push origin --tag is the command used to push the tag. 
+Then we'll be able to see the tags in the central repository. we can able to download the code till the tag whenever we want. 
+
+Out of all the tags, the final tag(final product) is called as release tag. 
+Once we done completely, once we got the release tag, then we can release the product into market. 
+For that central repository - releases - draft a new release - select tag - release title - description - publish release. 
+
+Once the update is released, it can be used everywhere. 
+Usually release is from production branch.
+
+We can provide access to the other people and we can provide different type of accesses in github. 
+For that in the central repository repository settings - Manage access - create team - + symbol - github id of the person - invite. Then
+repository settings - manage access - invite team or people - team name - read/triage/write/admin(type of access)
+
+git forks are the great way to contribute to the repository. After forking a repository, we can send a pull request to the original author. 
+Git forks are used to contribute to the open source projects. when we access the open source account, we can able to fork the repository to our repository(a copy will be created on our account). 
+we can work on it and make pull request to the original author.
+This will be done on central repository.  
+
+
