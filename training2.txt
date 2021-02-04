@@ -1,0 +1,25 @@
+LINUX operating system is mandatory(prerequisite) to Devops. 
+
+LINUX is very comfortable, secured, open source operating system. It's command based OS. 
+
+amazon linux. redhat linux, ubuntu are the various Linux os's. 
+
+Root user  : Administrator, super user. 
+Normal user: Apart from root user, all are normal users. 
+
+in LINUX os
+
+/ (is the base directory for Linux)
+ root home boot tmp etc
+                test
+                test 1
+ to access the test1 subfolder, the path will be /tmp/test/test1. 
+
+In aws console, we'll install the Linux boxes.(Linux OS), Launching ec2 instances(virtual servers) is launching Linux boxes.
+
+whoami is the command to know the current user. 
+pwd is the command to know the Present Working Directory. 
+ls is the command to get list of files and folders. 
+cd - change directory. 
+sudo -i is the comand to become the root user(super user, we should be authorised to become though)
+clear: To clear the screen.  
