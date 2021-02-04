@@ -1,0 +1,19 @@
+We are currently working with the AWS data center in ohio as we are near to that region.
+
+We are launching new Ec2 instances(servers) and working on them depending on the requirement. 
+While launching a new instance we need to create a new key pair(with some name Devops). 
+The keypair will be downloaded with .pemkey extension. 
+To work with the virtual instance(server) which is launched on the top of data center, we need to have installed putty application in our computer.
+
+To install putty:
+ Download putty. 
+ Select 64 bit.
+ For each pem key, we need to generate a private key in putty. for that puttygen- Load-pem key name-save-save private key.
+ Every server in AWS Console has it's own IP address. It's with the name public IP. 
+ To connect it with putty. open putty. paste IP address there. go to ssh, auth, we need to give the private key address downloaded. then the putty is ready to use on the instance in the aws console. 
+ 
+  ec2-user is the default user name to access the instance.  
+
+Once you done with the usage, better to terminate the instances in aws console. so we'll not be charged. 
+To terminate the instance, right click on the instance- terminate. 
+ 
