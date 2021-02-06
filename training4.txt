@@ -1,0 +1,26 @@
+Let's discuss about user management. How to create users? 
+
+To create users manually without using tools like ansible.
+
+useradd venky is the command used to add user with the name venky.
+id venky is used to show the user.
+passwd venky is the command used to set password to the user venky. 
+
+ssh application is running automatically on the top of each linux box launched on aws. 
+
+su - venky is the command used to swith to venky user from current user. we should know the user password if we are switching from any other user than root user. 
+
+exit is used to come out of the current user. 
+
+To give sudo access to one of the users: 
+
+We need to access the file /etc/sudoers to grant access users to the one of the users. we can use vi /etc/sudoers. only root user(admin) can only access /etc/sudoers file and can grant access to any of the users.
+
+In the sudoers file, in the last line we need to insert venky ALL=(ALL) NOPASSWD: ALL, then save & exit(wq!). then the access to become the root user will be given to user venky, so he can use sudo -i.
+
+free -m is used to check the ram.
+lscpu is used to check CPU. 
+
+man ls gives us the list of subcommands in ls command.
+man su gives us the list of subcommands in su command. 
+   
