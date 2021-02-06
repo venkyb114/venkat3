@@ -1,0 +1,43 @@
+How to create files and folders in Linux? 
+
+To change font size in putty: Right click-change settings-appearance- font-ok-apply
+
+sudo -i is the command used to become root or super user. 
+
+cd /tmp is the command used to change directory to a temporary folder. temporary folder is not used to store important files as they'll be deleted automatically after 30 days. 
+
+mkdir is the command used to create a folder in the directory. 
+Ex: mkdir test means it'll create the test folder in the directory. 
+
+If you highlight text in putty, it'll be copied automatically. No need to use ctrl+c.
+
+touch is the command used to create the empty files in the directory. 
+
+ctrl+d is used to paste the directory. 
+cat >>test4 is used to create the file test4. we can add any data to that.
+cat test4 is used to display the content in the file test4. 
+
+vi test2 is used to open file test2 in vi editor. 
+vi is the another command. vi editor has 3 modes.
+1) escape mode
+2) insert mode -should be in insert mode to add data.
+    there are 6 options. i,I,a,A,o,O.
+3) command mode
+    i takes us to the insert mode. we can type any data.
+    esc button escapes us from the current mode.
+    I takes us to the starting point of the line when we are in the escape mode.
+    A takes us to the ending point of the line when we are in the escape mode. 
+    G takes us to the starting point of the last line when we are in the escape mode.
+    gg takes us to the starting point of the first line when we are in the escape mode.
+    2gg takes us to the starting point of the second line when we are in the escape mode.
+    1000gg takes us to the starting point of the 1000th line when we are in the escape mode. 
+    dd will delete the line where we placed cursor, when we are in the escape mode.
+    u is for undo in putty. 
+    yy is used to copy the line where we place cursor when we are in the eccape mode.
+    p is used to paste the line when we are in the escape mode.  
+
+shift+ : takes us to the command mode in the vi editor so that we can type our commands. 
+wq!(w for save, q for quit) takes us to the normal putty screen(out of the vi mode).
+
+If putty become inactive with some technical issue: 
+right click- restart session - ec2-user
