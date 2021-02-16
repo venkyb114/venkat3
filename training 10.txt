@@ -1,0 +1,65 @@
+If we have 2 servers (master & client) afetr copying key from master to authorizrd_keys file to the client machine
+
+ssh (client machine ip address) used to connect client machine from the master server. 
+
+[root@master ~]# ssh 172.31.18.149
+
+after that we need to copy the ip addresses with the group name in the hosts file of the ansible folder.
+
+ansible -m ping dev(we need to give group name in the hosts file, not the client machine name) is used to check the communication with dev group of servers. 
+
+a file with the programm in the ansible is called as playbook(set of instructions or tasks).
+A playbook is useful for automation purpose. We can execute no. of tasks at the same time. 
+A playbook is written in yemen language(normal english language). so the file ends with .yaml or .yml not with .sh. 
+
+In cubernetes also, we use the yemen language. 
+
+In the ansible server we can use vi program.yml to write program.yml playbook.
+Insert mode:     ---           (starting of the file). 
+                 - hosts: Dev 
+                  tasks:
+                 - name: creating user
+                   user: name=pawan state=present
+                 - name: creating a file
+                   file: name=/tmp/test state=touch
+                 - name: installing application
+                    yum: name=docker state=installed 
+
+In yemen language indentation is very important(spaces and syntax).
+to the colon(:), left side we write the modules and right side we write the arguments. 
+always space after colon(:) and after -. 
+We can do any no. of tasks in the single playbook as written above. 
+
+In the ansible server ansible-playbook program.yml command is used to execute the program.yml playbook.
+After execution, we can see each task which is being executed, which is being not. 
+
+colour coding in output:
+ yellow colour means change happened.(changed=true)
+ green colour means it's already there, change not happened(changed=false).
+
+output:
+172.31.0.150               : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+If this serever skipped for some reason(if the given command don't work on this server, yum command won't work on ubuntu server), then skipped will be 1. 
+
+ansible.cfg is the file having configurations related to the ansible. 
+in the ansible server we can do ls, we can open ansible.cfg.(vi ansible.cfg)
+we can manage inventory files(where we are giving server details) and any other files here related to ansible. 
+We can change the colours here too if we want(highlight, warn, error).
+
+ansible-palybook program.yml --syntax-check is the command used to check the syntax of playbook program.yml
+If the syntax is correct, it'll not show anything. 
+
+ansible-playbook program.yml --check is the command uded to do the trail on playbook program.yml
+It means it'll show you the output. but it'll be executed on the client machines. 
+
+If we are writing the multiple blocks in single playbook --- is used to separate blocks.
+ansible-playbook program.yml --step is the command used to execute playbook blockwise(It'll ask permission for each --- mark). 
+
+there are commands to write Linux commands in ansible playbook(shell). 
+
+ansible-playbook program.yml --list-tasks is the command used to display the tasks list of program.yml playbook. 
+up arrow in the Linux is used to get the previous command.
+
+
+
+
